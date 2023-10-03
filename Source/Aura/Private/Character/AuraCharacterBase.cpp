@@ -8,9 +8,17 @@ AAuraCharacterBase::AAuraCharacterBase()
 {
  	
 	PrimaryActorTick.bCanEverTick = false;
+	OptimizationComponent = CreateDefaultSubobject<UOptimizationProxyComponent>(TEXT("OptimizationComponent"));
+	
+	
 	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>("Weapon");
 	Weapon->SetupAttachment(GetMesh(), FName("WeaponHandSocket"));
 	Weapon-> SetCollisionEnabled(ECollisionEnabled::NoCollision);
+}
+
+UAbilitySystemComponent* AAuraCharacterBase::GetAbilitySystemComponent() const
+{
+	return AbilitySystemComponent;
 }
 
 void AAuraCharacterBase::BeginPlay()
