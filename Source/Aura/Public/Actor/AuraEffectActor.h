@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "AuraEffectActor.generated.h"
 
+class UGameplayEffect;
+
 UCLASS()
 class AURA_API AAuraEffectActor : public AActor
 {
@@ -19,8 +21,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(EditAnywhere, Category="Applied Effects")
+	TSubclassOf<UGameplayEffect> InstantGameplayEffectClass;
 
+	UFUNCTION(BlueprintCallable)
+	void ApplyEffectToTarget(AActor* Target,TSubclassOf<UGameplayEffect> GameplayEffectClass);
 };
