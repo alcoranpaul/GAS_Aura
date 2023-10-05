@@ -9,6 +9,7 @@
 #include "AuraCharacterBase.generated.h"
 
 
+class UGameplayEffect;
 class USkeletalMeshComponent;
 class UOptimizationProxyComponent;
 class UAbilitySystemComponent;
@@ -39,4 +40,9 @@ protected:
 	TObjectPtr<UOptimizationProxyComponent> OptimizationComponent;
 
 	virtual void HandleInitAbility();
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Attributes")
+	TSubclassOf<UGameplayEffect> DefaultPrimaryAttributes;
+
+	void InitPrimaryAttributes() const;
 };
