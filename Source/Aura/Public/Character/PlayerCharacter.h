@@ -19,5 +19,5 @@ public:
 	virtual void OnRep_PlayerState() override;
 
 private:
-	void HandleInitAbility();
+	virtual void HandleInitAbility() override;
 };

@@ -37,4 +37,6 @@ protected:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Optimization, meta= (AllowPrivateAccess = "true"))
 	TObjectPtr<UOptimizationProxyComponent> OptimizationComponent;
+
+	virtual void HandleInitAbility();
 };

@@ -26,5 +26,9 @@ void AAuraCharacterBase::BeginPlay()
 	Super::BeginPlay();
 }
 
+void AAuraCharacterBase::HandleInitAbility()
+{
+}
+
 
 
